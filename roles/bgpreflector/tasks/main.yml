@@ -1,0 +1,5 @@
+- name: Abort if RD already exists
+  fail: msg="RD {{ rd }} already exists"
+  with_items: cisco.bgp.rd
+  when: "'{{ cisco.bgp.AS }}:{{ rd }}'  == '{{ item }}'"
+

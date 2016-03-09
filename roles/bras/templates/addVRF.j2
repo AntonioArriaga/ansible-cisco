@@ -1,0 +1,28 @@
+configure terminal
+
+ip vrf {{ VRFname }}
+rd {{ cisco.bgp.AS }}:{{ rd }}
+route-target export {{ cisco.bgp.AS }}:{{ rd }}
+route-target import {{ cisco.bgp.AS }}:{{ rd }}
+
+interface Loopback{{ rd }}
+ip vrf forwarding {{ VRFname }}
+no ip address
+no ip redirects
+no ip unreachables
+no ip proxy-arp
+no clns route-cache
+ip address {{ cisco.interfaces.Loopback0.IP }} 255.255.255.255
+
+interface gigabitEthernet 0/0.{{ rd }}
+encapsulation dot1Q {{ rd }}
+ip vrf forwarding {{ VRFname }}
+ip address 172.16.1.{{ rd }} 255.255.255.0
+
+
+router bgp {{ cisco.bgp.AS }}
+address-family ipv4 vrf {{ VRFname }}
+redistribute connected
+redistribute static
+exit-address-family
+

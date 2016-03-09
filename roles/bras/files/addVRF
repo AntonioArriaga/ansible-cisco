@@ -1,0 +1,28 @@
+configure terminal
+
+ip vrf YELLOW
+rd 65010:103
+route-target export 65010:103
+route-target import 65010:103
+
+interface Loopback103
+ip vrf forwarding YELLOW
+no ip address
+no ip redirects
+no ip unreachables
+no ip proxy-arp
+no clns route-cache
+ip address 10.0.0.1 255.255.255.255
+
+interface gigabitEthernet 0/0.103
+encapsulation dot1Q 103
+ip vrf forwarding YELLOW
+ip address 172.16.1.103 255.255.255.0
+
+
+router bgp 65010
+address-family ipv4 vrf YELLOW
+redistribute connected
+redistribute static
+exit-address-family
+

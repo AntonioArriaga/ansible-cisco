@@ -1,0 +1,8 @@
+- name: gather Information
+  local_action:
+    cisco_gather_facts.py
+      hostname="{{ inventory_hostname }}"
+      username="{{ username }}"
+      password="{{ password }}"
+      enable="{{ enable }}"
+
