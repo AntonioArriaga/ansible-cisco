@@ -1,16 +1,16 @@
 ---
 
-#- name: bgpreflector-tests
-#  hosts: bgpreflector-tests
-#  gather_facts: no
-#
-#  vars_files:
-#    - vars.yml
-#
-#  roles:
-#    - cisco
-#    - bgpreflector
-#
+- name: bgpreflector-tests
+  hosts: bgpreflector-tests
+  gather_facts: no
+
+  vars_files:
+    - vars.yml
+
+  roles:
+    - cisco
+    - bgpreflector
+
 
 - name: bras-tests
   hosts: cisco-tests
