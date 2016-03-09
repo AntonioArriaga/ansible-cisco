@@ -229,7 +229,7 @@ cisco_gather_facts:
           }
         },
         "version": {
-          "image": "c7301-adventerprisek9-mz.124-15.T13.bin"
+          "image": "flash:c1841-adventerprisek9-mz.124-20.T1.bin"
         },
         "hostname": "CISCOROUTER",
         "vrf": {
