@@ -6,5 +6,5 @@ The facts gathered can be used as inputs to other modules or used in templates t
 
 In this repository there is a playbook example that adds a VRF and some interfaces in the VRF. In order to do that, the playbook has the following tasks:
 - Search in BGP Reflectors router of de network if the RD you want to configure already exists.
-- Search in BRAS if exists a VRF with the same name
-- Adds the new VRF, some interfaces, and place the interfaces in the VRF
+- Search in BRAS if exists a VRF with the same name.
+- Adds the new VRF, some interfaces, and place the interfaces in the VRF.
