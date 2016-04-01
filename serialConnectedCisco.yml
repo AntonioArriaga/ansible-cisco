@@ -1,0 +1,6 @@
+- name: Serial connected cisco
+  hosts: localhost
+  gather_facts: no
+
+  roles:
+    - serialConnectedCisco

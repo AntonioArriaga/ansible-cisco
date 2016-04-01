@@ -1,0 +1,5 @@
+- name: Generate configuration file
+  local_action: template src=commands.j2 dest={{ playbook_dir }}/roles/serialConnectedCisco/files/commands.cfg force=yes
+
+- name: Apply configuration file
+  local_action: cisco-serial.py command_file={{ playbook_dir }}/roles/serialConnectedCisco/files/commands.cfg port=/dev/ttyUSB0

@@ -1,0 +1,11 @@
+enable
+configure terminal
+hostname {{ hostname }}
+!
+interface loopback0
+ip address {{ loopbackIP }} 255.255.255.255
+!
+interface vlan1
+ip address {{ vlan1IP }} {{ vlan1Mask }}
+!
+end

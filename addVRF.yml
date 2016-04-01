@@ -1,0 +1,25 @@
+---
+
+- name: bgpreflector-tests
+  hosts: bgpreflector-tests
+  gather_facts: no
+
+  vars_files:
+    - varsAddVRF.yml
+
+  roles:
+    - cisco
+    - bgpreflector
+
+
+- name: bras-tests
+  hosts: cisco-tests
+  gather_facts: no
+
+  vars_files:
+    - varsAddVRF.yml
+
+  roles:
+    - cisco
+    - { role: bras, when: "'{{ applyToHosts }}' in {{ group_names }}" }
+
