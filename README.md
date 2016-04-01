@@ -9,4 +9,4 @@ In this repository there is two playbook examples. addVRF.yml adds a VRF and som
 - Search in BRAS if exists a VRF with the same name.
 - Adds the new VRF, some interfaces, and place the interfaces in the VRF.
 
-serialConnectedCisco.yml creates a configuration file based in a template and execute it via serial port.
+serialConnectedCisco.yml creates a configuration file based in a template and executes it via serial port.
