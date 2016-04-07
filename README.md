@@ -10,3 +10,5 @@ In this repository there is two playbook examples. addVRF.yml adds a VRF and som
 - Adds the new VRF, some interfaces, and place the interfaces in the VRF.
 
 serialConnectedCisco.yml creates a configuration file based in a template and executes it via serial port.
+
+NOTE: I used netlib python module from https://github.com/jtdub/netlib
